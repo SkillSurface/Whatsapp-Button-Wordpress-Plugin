@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skill WhatsApp Chat Pro v3 — Documentation</title>
+<meta name="description" content="Complete step-by-step documentation for the Skill WhatsApp Chat Pro WordPress plugin.">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--wa:#25D366;--wa-d:#075E54;--wa-t:#128C7E;--ink:#0f172a;--soft:#f4f8f6;--bs-body-font-family:"Plus Jakarta Sans",system-ui,sans-serif;--bs-link-color-rgb:18,140,126;--bs-link-hover-color-rgb:7,94,84}
+[data-bs-theme=dark]{--soft:#0d1714;--ink:#e5e7eb}
+body{background:var(--soft);scroll-padding-top:90px}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+code,pre,kbd{font-family:"JetBrains Mono",monospace}
+.topnav{backdrop-filter:blur(12px);background:rgba(255,255,255,.85);border-bottom:1px solid rgba(0,0,0,.06)}
+[data-bs-theme=dark] .topnav{background:rgba(13,23,20,.85);border-color:rgba(255,255,255,.06)}
+.brand-ico{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--wa),var(--wa-d));color:#fff;display:grid;place-items:center;font-size:20px}
+.search-trigger{min-width:280px;text-align:left;border-radius:12px;color:var(--bs-secondary-color);background:var(--bs-tertiary-bg);border:1px solid var(--bs-border-color)}
+.hero{background:radial-gradient(1200px 400px at 10% -10%,rgba(37,211,102,.35),transparent),linear-gradient(135deg,#053d36,#075E54 45%,#128C7E);color:#fff;border-radius:28px;padding:64px 48px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-80px;bottom:-80px;width:340px;height:340px;border-radius:50%;background:rgba(255,255,255,.06)}
+.hero h1{font-weight:800;letter-spacing:-.02em}
+.pill{display:inline-flex;gap:6px;align-items:center;background:rgba(255,255,255,.15);border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600}
+.sidebar{position:sticky;top:86px;max-height:calc(100vh - 100px);overflow:auto}
+.sidebar .nav-link{color:var(--bs-body-color);border-radius:10px;padding:7px 12px;font-size:14px;font-weight:500;display:flex;gap:10px;align-items:center}
+.sidebar .nav-link i{color:var(--wa-t)}
+.sidebar .nav-link:hover{background:rgba(37,211,102,.08)}
+.sidebar .nav-link.active{background:rgba(37,211,102,.15);color:var(--wa-d)}
+[data-bs-theme=dark] .sidebar .nav-link.active{color:var(--wa)}
+.sidebar .grp{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--bs-secondary-color);font-weight:700;margin:16px 12px 6px}
+.doc-sec{background:var(--bs-body-bg);border-radius:22px;padding:36px;margin-bottom:28px;box-shadow:0 1px 3px rgba(0,0,0,.04),0 20px 40px -30px rgba(0,0,0,.2)}
+.doc-sec h2{font-weight:800;letter-spacing:-.01em;display:flex;gap:12px;align-items:center}
+.doc-sec h2 .ico{width:44px;height:44px;border-radius:14px;background:rgba(37,211,102,.14);color:var(--wa-t);display:grid;place-items:center;font-size:22px;flex:none}
+.doc-sec h3{font-weight:700;font-size:1.1rem;margin-top:1.6rem}
+.step{display:flex;gap:16px;margin-bottom:18px}
+.step-n{flex:none;width:36px;height:36px;border-radius:50%;background:var(--wa);color:#fff;font-weight:700;display:grid;place-items:center}
+.feat{border:1px solid var(--bs-border-color);border-radius:18px;padding:20px;height:100%;transition:transform .2s,box-shadow .2s;background:var(--bs-body-bg)}
+.feat:hover{transform:translateY(-3px);box-shadow:0 18px 30px -20px rgba(7,94,84,.4)}
+.feat i{font-size:26px;color:var(--wa-t)}
+.opt-table td:first-child{white-space:nowrap;font-weight:600}
+.opt-table code{font-size:.8rem}
+pre.code{background:#0b1512;color:#d1fae5;border-radius:14px;padding:18px;position:relative;font-size:13px;overflow:auto}
+.copy-btn{position:absolute;top:10px;right:10px}
+.callout{border-left:4px solid var(--wa);background:rgba(37,211,102,.08);border-radius:12px;padding:14px 18px}
+.callout.warn{border-color:#f59e0b;background:rgba(245,158,11,.1)}
+.callout.info{border-color:#0ea5e9;background:rgba(14,165,233,.08)}
+.mock{border-radius:18px;background:#e7f1ee;padding:20px;position:relative;min-height:330px;overflow:hidden}
+.mock-btn{position:absolute;right:20px;bottom:20px;width:58px;height:58px;border-radius:50%;background:var(--wa);display:grid;place-items:center;color:#fff;font-size:28px;box-shadow:0 10px 20px -6px rgba(0,0,0,.3)}
+.mock-pop{position:absolute;right:20px;bottom:92px;width:250px;border-radius:16px;background:#fff;overflow:hidden;box-shadow:0 18px 40px -12px rgba(0,0,0,.3);color:#111}
+.mock-pop .h{background:var(--wa-d);color:#fff;padding:12px 14px;font-weight:600}
+.mock-pop .b{background:#efeae2;padding:12px}.mock-pop .bb{background:#fff;border-radius:0 10px 10px 10px;padding:8px 10px;font-size:13px}
+.mock-pop .f{padding:10px}.mock-pop .f span{display:block;text-align:center;background:var(--wa);color:#fff;border-radius:999px;padding:8px;font-weight:600;font-size:13px}
+/* Search modal */
+#searchModal .modal-content{border-radius:20px;border:0;overflow:hidden}
+#searchInput{font-size:1.1rem;border:0;box-shadow:none;padding:18px 18px 18px 52px}
+.s-ico{position:absolute;left:20px;top:50%;transform:translateY(-50%);font-size:1.2rem;color:var(--wa-t)}
+.s-result{display:block;padding:12px 18px;border-radius:12px;text-decoration:none;color:inherit}
+.s-result:hover,.s-result.sel{background:rgba(37,211,102,.12)}
+.s-result small{color:var(--bs-secondary-color)}
+mark{background:rgba(37,211,102,.35);padding:0 2px;border-radius:3px;color:inherit}
+.faq .accordion-button:not(.collapsed){background:rgba(37,211,102,.1);color:var(--wa-d);box-shadow:none}
+.to-top{position:fixed;right:20px;bottom:20px;width:46px;height:46px;border-radius:50%;opacity:0;pointer-events:none;transition:.3s;z-index:1000}
+.to-top.show{opacity:1;pointer-events:auto}
+.progress-top{position:fixed;top:0;left:0;height:3px;background:var(--wa);z-index:2000;width:0}
+.btn-wa{--bs-btn-bg:var(--wa);--bs-btn-border-color:var(--wa);--bs-btn-color:#fff;--bs-btn-hover-bg:#1ebe5a;--bs-btn-hover-border-color:#1ebe5a;--bs-btn-hover-color:#fff}
+@media(max-width:991px){.hero{padding:40px 24px}.doc-sec{padding:24px}.search-trigger{min-width:0}}
+@media print{.topnav,.sidebar,.to-top,.progress-top{display:none!important}.doc-sec{box-shadow:none;break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="progress-top" id="prog"></div>
+
+<nav class="navbar topnav sticky-top py-2">
+  <div class="container-xxl">
+    <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="#top"><span class="brand-ico"><i class="bi bi-whatsapp"></i></span><span class="d-none d-sm-inline">WhatsApp Chat Pro <span class="badge text-bg-success ms-1">v3.0</span></span></a>
+    <div class="d-flex align-items-center gap-2">
+      <button class="btn search-trigger d-flex justify-content-between align-items-center gap-3" data-bs-toggle="modal" data-bs-target="#searchModal"><span><i class="bi bi-search me-2"></i>Search docs…</span><kbd class="d-none d-md-inline small">Ctrl K</kbd></button>
+      <button class="btn btn-outline-secondary" id="themeBtn" aria-label="Toggle dark mode"><i class="bi bi-moon-stars"></i></button>
+      <button class="btn btn-outline-secondary d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#mnav" aria-label="Menu"><i class="bi bi-list"></i></button>
+    </div>
+  </div>
+</nav>
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="mnav"><div class="offcanvas-header"><h5 class="offcanvas-title">Contents</h5><button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button></div><div class="offcanvas-body sidebar" id="mnavBody"></div></div>
+
+<div class="container-xxl py-4" id="top">
+  <div class="row g-4">
+    <aside class="col-lg-3 d-none d-lg-block">
+      <nav class="sidebar nav flex-column flex-nowrap" id="toc">
+        <div class="grp">Getting started</div>
+        <a class="nav-link" href="#intro"><i class="bi bi-house"></i>Introduction</a>
+        <a class="nav-link" href="#features"><i class="bi bi-stars"></i>Features</a>
+        <a class="nav-link" href="#requirements"><i class="bi bi-cpu"></i>Requirements</a>
+        <a class="nav-link" href="#install"><i class="bi bi-download"></i>Installation</a>
+        <a class="nav-link" href="#quickstart"><i class="bi bi-rocket-takeoff"></i>Quick start (5 min)</a>
+        <div class="grp">Dashboard modules</div>
+        <a class="nav-link" href="#dashboard"><i class="bi bi-speedometer2"></i>Dashboard &amp; Analytics</a>
+        <a class="nav-link" href="#general"><i class="bi bi-whatsapp"></i>General</a>
+        <a class="nav-link" href="#agents"><i class="bi bi-people"></i>Agents</a>
+        <a class="nav-link" href="#design"><i class="bi bi-palette"></i>Design</a>
+        <a class="nav-link" href="#behaviour"><i class="bi bi-lightning-charge"></i>Behaviour</a>
+        <a class="nav-link" href="#display"><i class="bi bi-funnel"></i>Display Rules</a>
+        <a class="nav-link" href="#hours"><i class="bi bi-clock-history"></i>Business Hours</a>
+        <a class="nav-link" href="#privacy"><i class="bi bi-shield-check"></i>Privacy &amp; Tracking</a>
+        <a class="nav-link" href="#advanced"><i class="bi bi-gear"></i>Advanced &amp; Tools</a>
+        <a class="nav-link" href="#preview"><i class="bi bi-eye"></i>Live Preview</a>
+        <div class="grp">Developers</div>
+        <a class="nav-link" href="#shortcode"><i class="bi bi-code-square"></i>Shortcode</a>
+        <a class="nav-link" href="#placeholders"><i class="bi bi-braces"></i>Placeholders</a>
+        <a class="nav-link" href="#hooks"><i class="bi bi-plug"></i>Hooks &amp; CSS classes</a>
+        <a class="nav-link" href="#ga4"><i class="bi bi-graph-up"></i>GA4 / GTM events</a>
+        <a class="nav-link" href="#security"><i class="bi bi-lock"></i>Security &amp; Performance</a>
+        <div class="grp">Help</div>
+        <a class="nav-link" href="#whatsapp"><i class="bi bi-info-circle"></i>WhatsApp rules (2026)</a>
+        <a class="nav-link" href="#troubleshoot"><i class="bi bi-wrench"></i>Troubleshooting</a>
+        <a class="nav-link" href="#faq"><i class="bi bi-question-circle"></i>FAQ</a>
+        <a class="nav-link" href="#changelog"><i class="bi bi-journal-text"></i>Changelog</a>
+      </nav>
+    </aside>
+
+    <main class="col-lg-9" id="content">
+      <!-- HERO -->
+      <section class="hero mb-4" id="intro" data-title="Introduction">
+        <div class="row align-items-center g-4 position-relative" style="z-index:1">
+          <div class="col-md-7">
+            <span class="pill mb-3"><i class="bi bi-patch-check-fill"></i> WordPress 6.0+ · PHP 7.4+ · Bootstrap 5.3</span>
+            <h1 class="display-5 mb-3">Skill WhatsApp Chat Pro</h1>
+            <p class="lead opacity-90 mb-4">A modern, secure and high-performance WhatsApp floating chat &amp; multi-agent support plugin for WordPress. This guide explains every module, every option and every developer hook — step by step.</p>
+            <div class="d-flex flex-wrap gap-2"><a href="#quickstart" class="btn btn-light btn-lg fw-semibold"><i class="bi bi-rocket-takeoff me-1"></i> Quick start</a><button class="btn btn-outline-light btn-lg" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="bi bi-search me-1"></i> Search</button></div>
+          </div>
+          <div class="col-md-5">
+            <div class="mock"><div class="mock-pop"><div class="h"><i class="bi bi-whatsapp me-1"></i> Support Team<br><small class="fw-normal opacity-75">Typically replies within minutes</small></div><div class="b"><div class="bb">Hi there! 👋<br>How can we help you today?</div></div><div class="f"><span><i class="bi bi-whatsapp"></i> Start Chat</span></div></div><div class="mock-btn"><i class="bi bi-whatsapp"></i></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURES -->
+      <section class="doc-sec" id="features" data-title="Features">
+        <h2><span class="ico"><i class="bi bi-stars"></i></span>Features at a glance</h2>
+        <p class="text-body-secondary">Everything you need to turn website visitors into WhatsApp conversations.</p>
+        <div class="row g-3">
+          <div class="col-md-6 col-xl-4"><div class="feat"><i class="bi bi-people"></i><h5 class="mt-2">Multi-agent support</h5><p class="mb-0 small">Up to 20 agents or departments, each with own number, avatar, role and pre-filled message. Drag &amp; drop ordering.</p></div></div>
+          <div class="col-md-6 col-xl-4"><div class="feat"><i class="bi bi-eye"></i><h5 class="mt-2">Live preview</h5><p class="mb-0 small">See every change instantly on a desktop or mobile mock-up before saving.</p></div></div>
+          <div class="col-md-6 col-xl-4"><div class="feat"><i class="bi bi-lightning"></i><h5 class="mt-2">AJAX dashboard</h5><p class="mb-0 small">Save without page reloads (Ctrl/Cmd + S), unsaved-changes warning, toast notifications.</p></div></div>
+          <div class="col-md-6 col-xl-4"><div class="feat"><i class="bi bi-clock"></i><h5 class="mt-2">Business hours</h5><p class="mb-0 small">Per-day schedule, any timezone, overnight shifts, offline message or auto-hide.</p></div></div>
+          <div class="col-md-6 col-xl-4"><div class="feat"><i class="bi bi-funnel"></i><h5 class="mt-2">Smart targeting</h5><p class="mb-0 small">Devices, include/exclude pages with AJAX search, logged-in users, WooCommerce checkout.</p></div></div>
+          <div class="col-md-6 col-xl-4"><div class="feat"><i class="bi bi-graph-up-arrow"></i><h5 class="mt-2">Analytics</h5><p class="mb-0 small">Opens, chats, conversion, mobile share and top agents — privacy-friendly. Plus GA4/GTM.</p></div></div>
+          <div class="col-md-6 col-xl-4"><div class="feat"><i class="bi bi-palette2"></i><h5 class="mt-2">Full design control</h5><p class="mb-0 small">Colours, presets, dark/auto theme, shapes, sizes, animations, custom icon, custom CSS.</p></div></div>
+          <div class="col-md-6 col-xl-4"><div class="feat"><i class="bi bi-shield-lock"></i><h5 class="mt-2">Secure &amp; GDPR-ready</h5><p class="mb-0 small">Nonces, capability checks, strict sanitising, escaping, optional consent checkbox.</p></div></div>
+          <div class="col-md-6 col-xl-4"><div class="feat"><i class="bi bi-speedometer"></i><h5 class="mt-2">Lightweight frontend</h5><p class="mb-0 small">~12 KB total, zero dependencies, deferred script, no external requests, accessible.</p></div></div>
+        </div>
+      </section>
+
+      <!-- REQUIREMENTS -->
+      <section class="doc-sec" id="requirements" data-title="Requirements">
+        <h2><span class="ico"><i class="bi bi-cpu"></i></span>Requirements</h2>
+        <div class="table-responsive"><table class="table align-middle">
+          <tbody>
+            <tr><td><i class="bi bi-wordpress me-2"></i>WordPress</td><td>6.0 or newer (tested up to 6.7)</td></tr>
+            <tr><td><i class="bi bi-filetype-php me-2"></i>PHP</td><td>7.4 or newer (8.x recommended)</td></tr>
+            <tr><td><i class="bi bi-whatsapp me-2"></i>WhatsApp</td><td>A WhatsApp or WhatsApp Business account on the number you enter</td></tr>
+            <tr><td><i class="bi bi-browser-chrome me-2"></i>Browsers</td><td>All modern browsers — Chrome, Edge, Firefox, Safari (macOS/iOS), Samsung Internet</td></tr>
+            <tr><td><i class="bi bi-person-gear me-2"></i>Permissions</td><td>Administrator (<code>manage_options</code>) to change settings</td></tr>
+          </tbody></table></div>
+      </section>
+
+      <!-- INSTALL -->
+      <section class="doc-sec" id="install" data-title="Installation">
+        <h2><span class="ico"><i class="bi bi-download"></i></span>Installation</h2>
+        <h3>Method 1 — Upload in WordPress (recommended)</h3>
+        <div class="step"><div class="step-n">1</div><div>Log in to your WordPress admin and go to <strong>Plugins → Add New Plugin</strong>.</div></div>
+        <div class="step"><div class="step-n">2</div><div>Click <strong>Upload Plugin</strong>, choose <code>skill-whatsapp-chat-pro.zip</code> and press <strong>Install Now</strong>.</div></div>
+        <div class="step"><div class="step-n">3</div><div>Click <strong>Activate</strong>. A new menu item <strong>WhatsApp Chat</strong> appears in the left admin menu.</div></div>
+        <h3>Method 2 — FTP / File Manager</h3>
+        <div class="step"><div class="step-n">1</div><div>Unzip the package on your computer.</div></div>
+        <div class="step"><div class="step-n">2</div><div>Upload the folder <code>skill-whatsapp-chat-pro</code> to <code>/wp-content/plugins/</code>.</div></div>
+        <div class="step"><div class="step-n">3</div><div>Activate it from <strong>Plugins</strong>.</div></div>
+        <h3>Updating from version 2.x</h3>
+        <div class="callout info"><i class="bi bi-arrow-repeat me-1"></i> Deactivate and delete the old version (your settings stay in the database), then install v3 and activate. Your number, messages, colours and hours are migrated automatically. The old “Hide on pages” list becomes a <em>Hide on selected pages</em> display rule.</div>
+      </section>
+
+      <!-- QUICKSTART -->
+      <section class="doc-sec" id="quickstart" data-title="Quick start">
+        <h2><span class="ico"><i class="bi bi-rocket-takeoff"></i></span>Quick start in 5 minutes</h2>
+        <div class="step"><div class="step-n">1</div><div><strong>Add your number.</strong> Open <em>WhatsApp Chat → General</em> and type your number in international format: country code + number, digits only. Example for Pakistan: <code>923001234567</code> (not <code>03001234567</code>). Click <strong>Test</strong> — WhatsApp should open with a test message.</div></div>
+        <div class="step"><div class="step-n">2</div><div><strong>Write your welcome text.</strong> Set the agent name, status line and welcome bubble.</div></div>
+        <div class="step"><div class="step-n">3</div><div><strong>Match your brand.</strong> In <em>Design</em>, choose a preset or your own colours and watch the preview on the right.</div></div>
+        <div class="step"><div class="step-n">4</div><div><strong>(Optional) Add agents</strong> in <em>Agents</em> — e.g. Sales, Support, Billing.</div></div>
+        <div class="step"><div class="step-n">5</div><div><strong>Save</strong> with the top-right button or <kbd>Ctrl</kbd>/<kbd>⌘</kbd> + <kbd>S</kbd>. Visit your website — the button is live.</div></div>
+        <div class="callout"><i class="bi bi-lightbulb me-1"></i> Tip: open the site in a private window to see it exactly as a new visitor (with auto-open and badge).</div>
+      </section>
+
+      <!-- DASHBOARD -->
+      <section class="doc-sec" id="dashboard" data-title="Dashboard & Analytics">
+        <h2><span class="ico"><i class="bi bi-speedometer2"></i></span>Dashboard &amp; Analytics</h2>
+        <p>The first screen gives you a performance overview of the widget. Choose a range of <strong>7, 30 or 90 days</strong> with the buttons at the top-right.</p>
+        <div class="table-responsive"><table class="table opt-table"><thead><tr><th>Card</th><th>What it means</th></tr></thead><tbody>
+          <tr><td>Popup opens</td><td>How many times visitors opened the chat popup.</td></tr>
+          <tr><td>Chats started</td><td>Clicks that opened WhatsApp (popup button, agent row, direct button or shortcode).</td></tr>
+          <tr><td>Conversion</td><td>Chats started ÷ popup opens. A healthy widget usually converts 30–60%.</td></tr>
+          <tr><td>From mobile</td><td>Share of chats started on screens ≤ 768 px.</td></tr>
+          <tr><td>Engagement trend</td><td>Daily line chart of opens vs chats.</td></tr>
+          <tr><td>Top agents</td><td>Which agent / department receives most chats. “Shortcode buttons” groups inline buttons.</td></tr>
+          <tr><td>Setup checklist</td><td>Live list of recommended steps, ticked automatically as you configure.</td></tr>
+        </tbody></table></div>
+        <div class="callout info"><i class="bi bi-shield-check me-1"></i> Only daily totals are stored (90-day history). No IP addresses, cookies or personal data — no consent banner needed for this feature.</div>
+      </section>
+
+      <!-- GENERAL -->
+      <section class="doc-sec" id="general" data-title="General settings">
+        <h2><span class="ico"><i class="bi bi-whatsapp"></i></span>General</h2>
+        <h3>WhatsApp connection</h3>
+        <div class="table-responsive"><table class="table opt-table"><thead><tr><th>Option</th><th>Description</th><th>Default</th></tr></thead><tbody>
+          <tr><td>Enable floating widget</td><td>Master switch. Also available as “Widget live” in the green top bar. Turning off hides the button everywhere but keeps all settings.</td><td>On</td></tr>
+          <tr><td>WhatsApp number</td><td>Main number used when no active agents exist. International format, 7–15 digits. Spaces, “+”, dashes and leading zeros are cleaned automatically. Invalid numbers are highlighted red and cannot be saved. <strong>Test</strong> opens a real chat.</td><td>—</td></tr>
+          <tr><td>Click behaviour</td><td><em>Show chat popup first</em>: button opens a WhatsApp-style window with greeting and CTA (best conversion). <em>Open WhatsApp directly</em>: one click goes straight to WhatsApp.</td><td>Popup</td></tr>
+          <tr><td>Pre-filled message</td><td>Text that appears in the visitor’s WhatsApp input box. Supports <a href="#placeholders">placeholders</a> like <code>{page_title}</code> so you know which page they came from.</td><td>Hello! I have a question about {page_title}</td></tr>
+        </tbody></table></div>
+        <h3>Popup content</h3>
+        <div class="table-responsive"><table class="table opt-table"><thead><tr><th>Option</th><th>Description</th></tr></thead><tbody>
+          <tr><td>Popup title / subtitle</td><td>Header text shown when you have <strong>two or more</strong> agents (list mode).</td></tr>
+          <tr><td>Default agent name</td><td>Name shown in the header and message bubble in single-agent mode.</td></tr>
+          <tr><td>Default agent status line</td><td>Small line under the name, e.g. “Typically replies within minutes”. Changes to “Currently offline” outside business hours.</td></tr>
+          <tr><td>Default avatar</td><td>Pick an image from the Media Library (square, 96×96 px or larger).</td></tr>
+          <tr><td>Welcome message bubble</td><td>Greeting shown as a chat bubble. Line breaks are kept; emojis are welcome.</td></tr>
+          <tr><td>Start-chat button label</td><td>Text of the green CTA at the bottom of the popup.</td></tr>
+          <tr><td>Footer note</td><td>Tiny text under the CTA (e.g. “Powered by WhatsApp”, “Replies 9am–6pm”). Leave empty to hide.</td></tr>
+        </tbody></table></div>
+      </section>
+
+      <!-- AGENTS -->
+      <section class="doc-sec" id="agents" data-title="Agents">
+        <h2><span class="ico"><i class="bi bi-people"></i></span>Agents</h2>
+        <p>Route visitors to the right person or department. With <strong>one</strong> active agent the popup shows a chat bubble; with <strong>two or more</strong> it shows a selectable list.</p>
+        <div class="step"><div class="step-n">1</div><div>Click <strong>Add agent</strong>.</div></div>
+        <div class="step"><div class="step-n">2</div><div>Fill <em>Name</em>, <em>Role / department</em>, <em>Phone</em> (international format) and optionally a <em>custom pre-filled message</em> for that agent.</div></div>
+        <div class="step"><div class="step-n">3</div><div>Click the round avatar to choose a photo from the Media Library.</div></div>
+        <div class="step"><div class="step-n">4</div><div>Drag the <i class="bi bi-grip-vertical"></i> handle to reorder. Use the switch to temporarily deactivate an agent, or <i class="bi bi-trash"></i> to remove.</div></div>
+        <div class="callout warn"><i class="bi bi-exclamation-triangle me-1"></i> Agents without a valid number are skipped when saving. If no agent is active, the main number from <em>General</em> is used.</div>
+      </section>
+
+      <!-- DESIGN -->
+      <section class="doc-sec" id="design" data-title="Design">
+        <h2><span class="ico"><i class="bi bi-palette"></i></span>Design</h2>
+        <div class="table-responsive"><table class="table opt-table"><thead><tr><th>Option</th><th>Description</th><th>Default</th></tr></thead><tbody>
+          <tr><td>Button / accent colour</td><td>Floating button, CTA, agent accent line.</td><td><code>#25D366</code></td></tr>
+          <tr><td>Icon colour</td><td>Colour of the WhatsApp glyph on the button.</td><td><code>#ffffff</code></td></tr>
+          <tr><td>Popup header colour</td><td>Header bar background and avatar fallback.</td><td><code>#075E54</code></td></tr>
+          <tr><td>Presets</td><td>One-click palettes: WhatsApp, Teal, Ocean, Midnight, Coral, Rose.</td><td>—</td></tr>
+          <tr><td>Popup theme</td><td>Light, Dark or Auto (follows visitor’s device dark mode).</td><td>Light</td></tr>
+          <tr><td>Icon style</td><td>Classic filled logo, Outline, or Custom image (PNG/SVG URL).</td><td>Classic</td></tr>
+          <tr><td>Shape</td><td>Circle, Rounded square, Square.</td><td>Circle</td></tr>
+          <tr><td>Size</td><td>40–90 px slider.</td><td>60 px</td></tr>
+          <tr><td>Attention animation</td><td>None, Pulse (ripple), Bounce, Shake. Automatically disabled for visitors who prefer reduced motion.</td><td>Pulse</td></tr>
+          <tr><td>Tooltip label</td><td>Speech label next to the button (desktop only), e.g. “Chat with us”.</td><td>On</td></tr>
+          <tr><td>Notification badge</td><td>Red “1” badge; disappears once the popup is opened.</td><td>On</td></tr>
+          <tr><td>Position</td><td>Bottom-left or bottom-right.</td><td>Right</td></tr>
+          <tr><td>Side / bottom offset</td><td>Distance from the screen edge (0–300 px). Increase if it overlaps a cookie bar or “back to top” button.</td><td>24 / 24</td></tr>
+          <tr><td>Z-index</td><td>Stacking order. Raise it if a theme element covers the button.</td><td>99999</td></tr>
+        </tbody></table></div>
+      </section>
+
+      <!-- BEHAVIOUR -->
+      <section class="doc-sec" id="behaviour" data-title="Behaviour">
+        <h2><span class="ico"><i class="bi bi-lightning-charge"></i></span>Behaviour</h2>
+        <div class="table-responsive"><table class="table opt-table"><thead><tr><th>Option</th><th>Description</th></tr></thead><tbody>
+          <tr><td>Auto-open popup</td><td>Opens the popup automatically after a delay — great for landing pages.</td></tr>
+          <tr><td>Auto-open delay</td><td>Seconds to wait (0–300).</td></tr>
+          <tr><td>Remember close</td><td>When a visitor closes the popup, it won’t auto-open again in that browser session.</td></tr>
+          <tr><td>Tooltip after (s)</td><td>Shows the tooltip label automatically for 6 seconds after X seconds. 0 = only on hover.</td></tr>
+          <tr><td>Reveal after scrolling</td><td>Hide the button until the visitor scrolls X% of the page (0% = always visible).</td></tr>
+          <tr><td>Open in new tab</td><td>Keeps your site open on desktop while WhatsApp Web opens in a new tab. On phones the WhatsApp app opens either way.</td></tr>
+        </tbody></table></div>
+        <p class="mb-0"><strong>Keyboard:</strong> <kbd>Esc</kbd> closes the popup; focus returns to the button. Clicking outside the popup closes it too.</p>
+      </section>
+
+      <!-- DISPLAY -->
+      <section class="doc-sec" id="display" data-title="Display rules">
+        <h2><span class="ico"><i class="bi bi-funnel"></i></span>Display Rules</h2>
+        <div class="table-responsive"><table class="table opt-table"><thead><tr><th>Option</th><th>Description</th></tr></thead><tbody>
+          <tr><td>Devices</td><td>All, Desktop only (&gt; 768 px), or Mobile &amp; tablet only (≤ 768 px).</td></tr>
+          <tr><td>Page rule</td><td><em>Every page</em>, <em>Only on selected pages</em>, or <em>Hide on selected pages</em>.</td></tr>
+          <tr><td>Selected content</td><td>Type 2+ letters in the AJAX search box — pages, posts, products and any public post type appear instantly. Click to add as a chip; × to remove.</td></tr>
+          <tr><td>Hide for logged-in users</td><td>Useful for membership sites or to hide it from your own team.</td></tr>
+          <tr><td>Hide on WooCommerce checkout</td><td>Keeps the payment page distraction-free (on by default; ignored if WooCommerce is not active).</td></tr>
+        </tbody></table></div>
+      </section>
+
+      <!-- HOURS -->
+      <section class="doc-sec" id="hours" data-title="Business hours">
+        <h2><span class="ico"><i class="bi bi-clock-history"></i></span>Business Hours</h2>
+        <div class="step"><div class="step-n">1</div><div>Turn on <strong>Enable business hours</strong>.</div></div>
+        <div class="step"><div class="step-n">2</div><div>Choose a <strong>Timezone</strong> (e.g. <code>Asia/Karachi</code>) or keep “Use WordPress timezone” (Settings → General).</div></div>
+        <div class="step"><div class="step-n">3</div><div>Tick open days and set <em>From/To</em>. Night shifts like <code>22:00 → 02:00</code> are supported. Use <strong>Copy Monday to all weekdays</strong> to speed things up.</div></div>
+        <div class="step"><div class="step-n">4</div><div>Choose <strong>When offline</strong>: show the offline message (status dot turns grey and the offline text is pre-filled) or hide the widget entirely.</div></div>
+        <div class="callout warn"><i class="bi bi-hdd-network me-1"></i> If you use full-page caching, online/offline status reflects the time the page was cached. Set the cache lifetime to 1 hour or less for accurate status.</div>
+      </section>
+
+      <!-- PRIVACY -->
+      <section class="doc-sec" id="privacy" data-title="Privacy & Tracking">
+        <h2><span class="ico"><i class="bi bi-shield-check"></i></span>Privacy &amp; Tracking</h2>
+        <div class="table-responsive"><table class="table opt-table"><thead><tr><th>Option</th><th>Description</th></tr></thead><tbody>
+          <tr><td>Require consent</td><td>Adds a checkbox above the CTA. The chat buttons are locked until it’s ticked — helpful for GDPR because chatting shares the visitor’s number with WhatsApp/Meta.</td></tr>
+          <tr><td>Consent text</td><td>The label, e.g. “I agree to the privacy policy.”</td></tr>
+          <tr><td>Built-in analytics</td><td>Records aggregate opens/clicks for the Dashboard.</td></tr>
+          <tr><td>GA4 / GTM events</td><td>Sends <code>whatsapp_open</code> and <code>whatsapp_click</code> events (see <a href="#ga4">GA4</a>).</td></tr>
+        </tbody></table></div>
+      </section>
+
+      <!-- ADVANCED -->
+      <section class="doc-sec" id="advanced" data-title="Advanced & Tools">
+        <h2><span class="ico"><i class="bi bi-gear"></i></span>Advanced &amp; Tools</h2>
+        <div class="table-responsive"><table class="table opt-table"><thead><tr><th>Tool</th><th>Description</th></tr></thead><tbody>
+          <tr><td>Shortcode</td><td>Ready-to-copy snippet for inline buttons (see <a href="#shortcode">Shortcode</a>).</td></tr>
+          <tr><td>Custom CSS</td><td>Extra CSS loaded only with the widget. HTML tags are stripped for safety.</td></tr>
+          <tr><td>Export settings</td><td>Downloads <code>whatsapp-chat-pro-settings.json</code> — perfect for backups or copying to another site.</td></tr>
+          <tr><td>Import settings</td><td>Upload a previously exported JSON. Every value is re-validated before saving.</td></tr>
+          <tr><td>Clear analytics</td><td>Deletes all stored statistics.</td></tr>
+          <tr><td>Reset to defaults</td><td>Restores factory settings (asks for confirmation).</td></tr>
+          <tr><td>Delete data on uninstall</td><td>When on, deleting the plugin also removes its settings and stats from the database.</td></tr>
+        </tbody></table></div>
+      </section>
+
+      <!-- PREVIEW -->
+      <section class="doc-sec" id="preview" data-title="Live preview">
+        <h2><span class="ico"><i class="bi bi-eye"></i></span>Live Preview</h2>
+        <p>The right-hand panel renders the real widget with your unsaved settings. Switch between <i class="bi bi-laptop"></i> desktop and <i class="bi bi-phone"></i> mobile frames and click the button in the preview to open/close the popup. An orange <span class="badge text-bg-warning">Unsaved</span> badge in the top bar reminds you to save; the browser also warns if you try to leave with unsaved changes.</p>
+      </section>
+
+      <!-- SHORTCODE -->
+      <section class="doc-sec" id="shortcode" data-title="Shortcode">
+        <h2><span class="ico"><i class="bi bi-code-square"></i></span>Shortcode</h2>
+        <p>Use it in any post, page, widget, Gutenberg <em>Shortcode</em> block, Elementor or WooCommerce product description.</p>
+<pre class="code"><button class="btn btn-sm btn-outline-light copy-btn"><i class="bi bi-clipboard"></i></button>[whatsapp_button text="Order on WhatsApp" phone="923001234567" msg="I want to order {page_title}" style="pill" align="center"]</pre>
+        <div class="table-responsive"><table class="table opt-table"><thead><tr><th>Attribute</th><th>Values</th><th>Default</th></tr></thead><tbody>
+          <tr><td>text</td><td>Button label</td><td>Tooltip label</td></tr>
+          <tr><td>phone</td><td>International number</td><td>Main number / first agent</td></tr>
+          <tr><td>msg</td><td>Pre-filled text (placeholders allowed)</td><td>General pre-filled message</td></tr>
+          <tr><td>style</td><td><code>solid</code> · <code>outline</code> · <code>pill</code></td><td>solid</td></tr>
+          <tr><td>align</td><td><code>left</code> · <code>center</code> · <code>right</code></td><td>—</td></tr>
+        </tbody></table></div>
+        <p class="mb-0 small text-body-secondary"><code>[swcp_button]</code> is an alias. In PHP templates: <code>&lt;?php echo do_shortcode('[whatsapp_button]'); ?&gt;</code></p>
+      </section>
+
+      <!-- PLACEHOLDERS -->
+      <section class="doc-sec" id="placeholders" data-title="Placeholders">
+        <h2><span class="ico"><i class="bi bi-braces"></i></span>Dynamic placeholders</h2>
+        <div class="table-responsive"><table class="table opt-table"><thead><tr><th>Placeholder</th><th>Replaced with</th><th>Example</th></tr></thead><tbody>
+          <tr><td><code>{page_title}</code></td><td>Current page/post/product title</td><td>Blue Cotton T-Shirt</td></tr>
+          <tr><td><code>{page_url}</code></td><td>Current page address</td><td>https://shop.com/product/blue-tee</td></tr>
+          <tr><td><code>{site_name}</code></td><td>Your site title</td><td>My Shop</td></tr>
+        </tbody></table></div>
+      </section>
+
+      <!-- HOOKS -->
+      <section class="doc-sec" id="hooks" data-title="Hooks & CSS classes">
+        <h2><span class="ico"><i class="bi bi-plug"></i></span>Developer hooks &amp; CSS</h2>
+        <h3>Filter: <code>swcp_should_show</code></h3>
+<pre class="code"><button class="btn btn-sm btn-outline-light copy-btn"><i class="bi bi-clipboard"></i></button>// Hide the widget on the "blog" category archive
+add_filter( 'swcp_should_show', function ( $show, $settings ) {
+    return is_category( 'blog' ) ? false : $show;
+}, 10, 2 );</pre>
+        <h3>Action: <code>swcp_settings_saved</code></h3>
+<pre class="code"><button class="btn btn-sm btn-outline-light copy-btn"><i class="bi bi-clipboard"></i></button>// Purge your cache plugin after saving
+add_action( 'swcp_settings_saved', function ( $settings ) {
+    if ( function_exists( 'rocket_clean_domain' ) ) rocket_clean_domain();
+} );</pre>
+        <h3>Main CSS classes &amp; variables</h3>
+        <div class="table-responsive"><table class="table opt-table"><tbody>
+          <tr><td><code>#swcp-widget .swcp-wrap</code></td><td>Root container. Variables: <code>--swcp-bg</code>, <code>--swcp-icon</code>, <code>--swcp-header</code>, <code>--swcp-size</code>, <code>--swcp-x</code>, <code>--swcp-y</code>, <code>--swcp-z</code></td></tr>
+          <tr><td><code>.swcp-btn</code></td><td>Floating button</td></tr>
+          <tr><td><code>.swcp-popup</code>, <code>.swcp-head</code>, <code>.swcp-body</code>, <code>.swcp-foot</code></td><td>Popup parts</td></tr>
+          <tr><td><code>.swcp-agent</code>, <code>.swcp-cta</code></td><td>Agent row / start-chat button</td></tr>
+          <tr><td><code>.swcp-sc-btn</code></td><td>Shortcode button</td></tr>
+          <tr><td><code>.swcp-is-open</code></td><td>State class when the popup is open</td></tr>
+        </tbody></table></div>
+      </section>
+
+      <!-- GA4 -->
+      <section class="doc-sec" id="ga4" data-title="GA4 GTM events">
+        <h2><span class="ico"><i class="bi bi-graph-up"></i></span>Google Analytics 4 / Tag Manager</h2>
+        <p>If <code>gtag()</code> is on the page, these events are sent automatically:</p>
+<pre class="code"><button class="btn btn-sm btn-outline-light copy-btn"><i class="bi bi-clipboard"></i></button>gtag('event', 'whatsapp_open');                       // popup opened
+gtag('event', 'whatsapp_click', { agent: 'a1b2c3d4' }); // chat started
+
+// Google Tag Manager dataLayer
+{ event: 'swcp_open' }  /  { event: 'swcp_click', swcp_agent: 'main' }</pre>
+        <p class="mb-0">In GA4 go to <strong>Admin → Events</strong> and mark <code>whatsapp_click</code> as a <strong>key event</strong> to track it as a conversion.</p>
+      </section>
+
+      <!-- SECURITY -->
+      <section class="doc-sec" id="security" data-title="Security & Performance">
+        <h2><span class="ico"><i class="bi bi-lock"></i></span>Security &amp; Performance</h2>
+        <div class="row g-3">
+          <div class="col-md-6"><h3 class="mt-0">Security</h3><ul>
+            <li>All admin AJAX actions require <code>manage_options</code> + a WordPress nonce.</li>
+            <li>Every setting is whitelisted and sanitised on save and import (numbers, colours, URLs, enums, times, timezones).</li>
+            <li>All output escaped (<code>esc_html</code>, <code>esc_attr</code>, <code>esc_url</code>).</li>
+            <li>Tracking endpoint is nonce-protected and rate-limited per visitor.</li>
+            <li>Links use <code>rel="noopener noreferrer nofollow"</code>.</li>
+            <li>Direct file access blocked in every PHP file.</li></ul></div>
+          <div class="col-md-6"><h3 class="mt-0">Performance</h3><ul>
+            <li>Frontend: one ~8 KB CSS + one ~4 KB deferred JS, no jQuery, no fonts.</li>
+            <li>Assets load only on pages where the widget is shown.</li>
+            <li>Bootstrap, icons and Chart.js are bundled and load <strong>only</strong> on the plugin’s admin page — no CDN calls.</li>
+            <li>Analytics uses <code>sendBeacon</code> (non-blocking) and a non-autoloaded option.</li>
+            <li>Respects <code>prefers-reduced-motion</code>; accessible labels &amp; focus states.</li></ul></div>
+        </div>
+      </section>
+
+      <!-- WHATSAPP RULES -->
+      <section class="doc-sec" id="whatsapp" data-title="WhatsApp rules">
+        <h2><span class="ico"><i class="bi bi-info-circle"></i></span>How WhatsApp click-to-chat works (2026)</h2>
+        <ul>
+          <li>The plugin uses WhatsApp’s official link format <code>https://wa.me/&lt;number&gt;?text=&lt;message&gt;</code>. It works with both WhatsApp and WhatsApp Business — no API key or Meta approval needed.</li>
+          <li>On phones it opens the WhatsApp app; on desktop it opens WhatsApp Desktop or WhatsApp Web.</li>
+          <li>The number <strong>must</strong> include the country code and have no <code>+</code>, spaces, brackets or leading zero (the plugin cleans these for you).</li>
+          <li>The visitor always sends the first message, so no message templates or 24-hour window rules apply.</li>
+          <li>Recommended: use the WhatsApp Business app for auto-greeting, away messages, labels and quick replies that complement this widget.</li>
+        </ul>
+      </section>
+
+      <!-- TROUBLESHOOT -->
+      <section class="doc-sec" id="troubleshoot" data-title="Troubleshooting">
+        <h2><span class="ico"><i class="bi bi-wrench"></i></span>Troubleshooting</h2>
+        <div class="table-responsive"><table class="table"><thead><tr><th>Problem</th><th>Solution</th></tr></thead><tbody>
+          <tr><td>Button does not appear</td><td>Check: widget enabled, valid number, Display Rules, device setting, business hours “hide” mode, logged-in hiding. Then clear your cache plugin and CDN.</td></tr>
+          <tr><td>“Phone number shared via url is invalid”</td><td>The number lacks a country code or isn’t on WhatsApp. Use the <strong>Test</strong> button.</td></tr>
+          <tr><td>Button hidden behind another element</td><td>Raise <em>Z-index</em> or change offsets.</td></tr>
+          <tr><td>Wrong online/offline status</td><td>Check the timezone and your page-cache lifetime.</td></tr>
+          <tr><td>Saving shows an error</td><td>Your session may have expired — reload the page. Security plugins blocking <code>admin-ajax.php</code> must allow <code>swcp_*</code> actions.</td></tr>
+          <tr><td>Analytics stay at 0</td><td>Ensure Built-in analytics is on; some ad-blockers block tracking requests; cached pages may hold an expired nonce (keep cache ≤ 12 h).</td></tr>
+        </tbody></table></div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="doc-sec" id="faq" data-title="FAQ">
+        <h2><span class="ico"><i class="bi bi-question-circle"></i></span>Frequently asked questions</h2>
+        <div class="accordion faq" id="faqAcc">
+          <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#q1">Do I need the WhatsApp Business API?</button></h3><div id="q1" class="accordion-collapse collapse show" data-bs-parent="#faqAcc"><div class="accordion-body">No. Click-to-chat works with any WhatsApp or WhatsApp Business number at no cost.</div></div></div>
+          <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q2">Does it work with Elementor, Divi, WooCommerce and page builders?</button></h3><div id="q2" class="accordion-collapse collapse" data-bs-parent="#faqAcc"><div class="accordion-body">Yes. The floating widget is added in the footer of any theme, and the shortcode works in every builder.</div></div></div>
+          <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q3">Is it compatible with caching plugins?</button></h3><div id="q3" class="accordion-collapse collapse" data-bs-parent="#faqAcc"><div class="accordion-body">Yes — WP Rocket, LiteSpeed, W3TC, Cloudflare, etc. Clear cache after saving settings (or use the <code>swcp_settings_saved</code> hook).</div></div></div>
+          <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q4">Can I translate the plugin?</button></h3><div id="q4" class="accordion-collapse collapse" data-bs-parent="#faqAcc"><div class="accordion-body">Yes. All admin strings use the <code>skill-whatsapp-chat-pro</code> text domain (Loco Translate, WPML, Polylang). Visitor-facing texts are edited directly in the settings.</div></div></div>
+          <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q5">Does it support RTL languages?</button></h3><div id="q5" class="accordion-collapse collapse" data-bs-parent="#faqAcc"><div class="accordion-body">Yes. Set Position to “Left” for a natural RTL layout.</div></div></div>
+          <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q6">Will updating overwrite my settings?</button></h3><div id="q6" class="accordion-collapse collapse" data-bs-parent="#faqAcc"><div class="accordion-body">No. Settings live in the database and are migrated automatically. Export them first for extra safety.</div></div></div>
+        </div>
+      </section>
+
+      <!-- CHANGELOG -->
+      <section class="doc-sec" id="changelog" data-title="Changelog">
+        <h2><span class="ico"><i class="bi bi-journal-text"></i></span>Changelog</h2>
+        <h3 class="mt-0">3.0.0 <span class="badge text-bg-success">Latest</span></h3>
+        <ul><li>Complete rebuild with Bootstrap 5.3 dashboard and live desktop/mobile preview</li><li>Multi-agent support with drag &amp; drop, avatars and custom messages</li><li>Analytics dashboard (Chart.js) + GA4/GTM events</li><li>Display rules with AJAX content search; WooCommerce checkout hiding</li><li>Timezone-aware business hours with overnight ranges and hide-when-offline</li><li>GDPR consent, dark/auto theme, shapes, animations, scroll trigger, badge, placeholders</li><li>Import / export / reset, clean uninstall, accessibility and performance improvements</li></ul>
+        <h3>2.1.0</h3><ul class="mb-0"><li>Single-agent popup, business hours, shortcode.</li></ul>
+      </section>
+
+      <footer class="text-center text-body-secondary small py-4">Skill WhatsApp Chat Pro · Documentation v3.0.0 · <a href="#top">Back to top</a></footer>
+    </main>
+  </div>
+</div>
+
+<!-- Search modal -->
+<div class="modal fade" id="searchModal" tabindex="-1" aria-label="Search documentation">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg"><div class="modal-content">
+    <div class="position-relative border-bottom"><i class="bi bi-search s-ico"></i><input type="search" id="searchInput" class="form-control" placeholder="Search options, modules, shortcodes…" autocomplete="off"><div class="spinner-border spinner-border-sm text-success position-absolute d-none" id="sSpin" style="right:20px;top:24px"></div></div>
+    <div class="modal-body p-2" id="sResults"><div class="text-center text-body-secondary py-5"><i class="bi bi-keyboard fs-2"></i><p class="mt-2 mb-0">Start typing — use <kbd>↑</kbd> <kbd>↓</kbd> and <kbd>Enter</kbd> to navigate.</p></div></div>
+    <div class="modal-footer py-2 small text-body-secondary justify-content-between"><span><span id="sCount">0</span> results</span><span><kbd>Esc</kbd> to close</span></div>
+  </div></div>
+</div>
+
+<button class="btn btn-wa to-top shadow" id="toTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+(function(){
+  // Mobile nav = clone of sidebar
+  document.getElementById('mnavBody').innerHTML = document.getElementById('toc').outerHTML.replace('id="toc"','');
+  document.querySelectorAll('#mnavBody a').forEach(a=>a.addEventListener('click',()=>bootstrap.Offcanvas.getInstance('#mnav')?.hide()));
+
+  // Theme toggle
+  const root=document.documentElement, tb=document.getElementById('themeBtn');
+  const setT=t=>{root.setAttribute('data-bs-theme',t);tb.innerHTML=t==='dark'?'<i class="bi bi-sun"></i>':'<i class="bi bi-moon-stars"></i>';try{localStorage.setItem('swcp-doc-theme',t)}catch(e){}};
+  setT((()=>{try{return localStorage.getItem('swcp-doc-theme')}catch(e){}})()||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));
+  tb.onclick=()=>setT(root.getAttribute('data-bs-theme')==='dark'?'light':'dark');
+
+  // Scroll spy + progress + to-top
+  const secs=[...document.querySelectorAll('[data-title]')], links=document.querySelectorAll('.sidebar .nav-link[href^="#"]');
+  const prog=document.getElementById('prog'), tt=document.getElementById('toTop');
+  const onScroll=()=>{const h=document.documentElement;prog.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';tt.classList.toggle('show',h.scrollTop>600);
+    let cur=secs[0].id;secs.forEach(s=>{if(s.getBoundingClientRect().top<120)cur=s.id});links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+cur));};
+  addEventListener('scroll',onScroll,{passive:true});onScroll();tt.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+
+  // Copy buttons
+  document.querySelectorAll('.copy-btn').forEach(b=>b.addEventListener('click',()=>{const t=b.parentElement.innerText.trim();navigator.clipboard?.writeText(t).then(()=>{b.innerHTML='<i class="bi bi-check2"></i>';setTimeout(()=>b.innerHTML='<i class="bi bi-clipboard"></i>',1500)})}));
+
+  // ---- AJAX-style search: builds an index then queries it asynchronously (debounced, with loader) ----
+  const index=[];
+  secs.forEach(s=>{
+    const title=s.dataset.title;
+    index.push({id:s.id,title,sub:'Section',text:s.innerText.replace(/\s+/g,' ')});
+    s.querySelectorAll('tr').forEach(tr=>{const c=tr.querySelectorAll('td');if(c.length>1)index.push({id:s.id,title:c[0].innerText.trim(),sub:title,text:tr.innerText.replace(/\s+/g,' ')})});
+    s.querySelectorAll('h3,.accordion-button').forEach(h=>index.push({id:s.id,title:h.innerText.trim(),sub:title,text:(h.closest('.accordion-item')?h.closest('.accordion-item').innerText:h.innerText+' '+(h.nextElementSibling?h.nextElementSibling.innerText:'')).replace(/\s+/g,' ')}));
+  });
+  const searchApi=q=>new Promise(res=>setTimeout(()=>{
+    const terms=q.toLowerCase().split(/\s+/).filter(Boolean);
+    const r=index.map(it=>{const t=it.title.toLowerCase(),x=it.text.toLowerCase();let sc=0;for(const w of terms){if(!x.includes(w))return null;sc+=t.includes(w)?10:1;}return{...it,sc}}).filter(Boolean).sort((a,b)=>b.sc-a.sc);
+    const seen=new Set();res(r.filter(i=>{const k=i.title+i.sub;if(seen.has(k))return false;seen.add(k);return true}).slice(0,25));
+  },120));
+  const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const hl=(s,terms)=>{let o=esc(s);terms.forEach(w=>{if(w.length>1)o=o.replace(new RegExp('('+w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi'),'<mark>$1</mark>')});return o};
+  const snip=(t,w)=>{const i=t.toLowerCase().indexOf(w);const s=Math.max(0,i-50);return(s?'…':'')+t.substr(s,150)+'…'};
+  const inp=document.getElementById('searchInput'),out=document.getElementById('sResults'),spin=document.getElementById('sSpin'),cnt=document.getElementById('sCount');
+  let tmr,sel=-1,reqId=0;
+  inp.addEventListener('input',()=>{clearTimeout(tmr);const q=inp.value.trim();if(q.length<2){out.innerHTML='<div class="text-center text-body-secondary py-5">Type at least 2 characters…</div>';cnt.textContent=0;return}
+    spin.classList.remove('d-none');tmr=setTimeout(async()=>{const my=++reqId;const res=await searchApi(q);if(my!==reqId)return;spin.classList.add('d-none');const terms=q.toLowerCase().split(/\s+/);cnt.textContent=res.length;sel=-1;
+      out.innerHTML=res.length?res.map(r=>`<a class="s-result" href="#${r.id}"><div class="fw-semibold">${hl(r.title,terms)} <small class="ms-1 badge text-bg-light">${esc(r.sub)}</small></div><small>${hl(snip(r.text,terms[0]),terms)}</small></a>`).join(''):'<div class="text-center text-body-secondary py-5"><i class="bi bi-emoji-frown fs-2"></i><p class="mt-2 mb-0">No results for “'+esc(q)+'”</p></div>';},200)});
+  out.addEventListener('click',e=>{if(e.target.closest('.s-result'))bootstrap.Modal.getInstance('#searchModal').hide()});
+  inp.addEventListener('keydown',e=>{const items=out.querySelectorAll('.s-result');if(!items.length)return;
+    if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();sel=(sel+(e.key==='ArrowDown'?1:-1)+items.length)%items.length;items.forEach((x,i)=>x.classList.toggle('sel',i===sel));items[sel].scrollIntoView({block:'nearest'})}
+    if(e.key==='Enter'){e.preventDefault();(items[sel]||items[0]).click();location.hash=(items[sel]||items[0]).getAttribute('href')}});
+  document.getElementById('searchModal').addEventListener('shown.bs.modal',()=>inp.focus());
+  document.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'||(e.key==='/'&&!/input|textarea/i.test(document.activeElement.tagName))){e.preventDefault();bootstrap.Modal.getOrCreateInstance('#searchModal').show()}});
+})();
+</script>
+</body>
+</html>
